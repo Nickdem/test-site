@@ -3,7 +3,7 @@ import { cards } from './data'
 export function giveMeCards() {
     return async dispatch => {
         try {
-            await  setTimeout(() => dispatch(fetchCardsSuccess(cards)), 1500)
+            await dispatch(fetchCardsSuccess(cards))
         } catch (e) {
             dispatch(fetchCardsError(e))
         }
