@@ -1,0 +1,231 @@
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 312px;
+    height: 472px;
+    margin: 1rem 0 2.5rem;
+    background-color: #fff;
+    background:-o-linear-gradient(315deg, transparent 38px, #fff 0);
+    background:linear-gradient(135deg, transparent 38px, #fff 0);
+    z-index: 99;
+    cursor: pointer;
+}
+
+.card::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    left: -4px;
+    z-index: 2;
+    height: calc(100% - 54px);
+    bottom: -4px;
+    border-color: #1698d9;
+    border-style: solid;
+    border-width: 0px 4px 4px 4px;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+}
+
+.card-text {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.card-text p {
+    margin-left: 17%;
+}
+
+.card-text--top {
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+
+.card-text h1 {
+    font-size: 48px;
+    margin: 0 0 0 17%;
+}
+.card-text h3 {
+    font-size: 24px;
+    margin: .25rem 0 1rem 17%;
+}
+
+.card-text--middle,
+.card-text--bottom  {
+    font-size: 14px;
+    margin: 0 0 0 17%;
+}
+
+.card-text--bottom {
+    height: 17px;
+    width: 150px;
+    margin-bottom: 1rem;
+} 
+
+.card-text::before,
+.card-text::after {
+    position: absolute;
+    content: '';
+    height: calc(100% * 0.275);
+    z-index: 1;
+    top: -4px;
+    border-color: #1698d9;
+    border-style: solid;
+}
+
+.card-text::before {
+    width: 20%;
+    left: -5px;
+    border-width: 4px 0px 0px 5px;
+    -webkit-transform: skew(-45deg);
+        -ms-transform: skew(-45deg);
+            transform: skew(-45deg);
+    -webkit-transform-origin: left bottom;
+        -ms-transform-origin: left bottom;
+            transform-origin: left bottom;
+}
+
+.card-text::after {
+    width: 80%;
+    right: -4px; 
+    border-width: 4px 4px 0px 0px;
+    border-top-right-radius: 9px;
+    -webkit-transform-origin: right top;
+        -ms-transform-origin: right top;
+            transform-origin: right top;
+}
+
+.card-img {
+    z-index: -10;
+    pointer-events: none;
+}
+
+.card-img img {
+    width: 280px;
+    height: 273px;
+}
+
+.card-img div {
+    position: absolute;
+    text-align: center;
+    right: 12px;
+    bottom: 12px;
+    width: 80px;
+    height: 80px;
+    background-color: #1698d9;
+    color: #fff; 
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.card-img div p {
+    margin: 0;
+}
+
+.card-img div p:first-child {
+    font-size: 42px;
+}
+
+.card-img div p:last-child {
+    font-size: 21px;
+}
+
+.card-desc {
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.card-desc--text-sad {
+    color: #ffff66;
+}
+
+.card-desc--text button {
+    background: none;
+    z-index: 100;
+    pointer-events: auto;
+    cursor: pointer;
+    border: none;
+    color: #107cb2;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px dashed #107cb2;
+}
+
+/* hover */
+
+.card:hover > .card-text::before,
+.card:hover > .card-text::after,
+.card:hover::after { 
+    border-color: #2ea8e6;
+}
+
+.card:hover > .card-img div {
+    background-color: #2ea8e6;
+}
+
+/*disabled */
+
+.card-disabled {
+    z-index: 99;
+    pointer-events: none;
+}
+.card-disabled:hover {
+    z-index: 3;
+    pointer-events: none;
+}
+
+.card-disabled > .card-text::before,
+.card-disabled > .card-text::after,
+.card-disabled::after { 
+    border-color: #b3b3b3;
+}
+
+.card-disabled > .card-text p,
+.card-disabled > .card-text h1,
+.card-disabled > .card-text h3,
+.card-disabled > .card-img img {
+    opacity: .5;
+}
+
+.card-disabled > .card-img div {
+    background-color: #b3b3b3;
+}
+
+/* selected*/
+
+.card-selected > .card-text::before,
+.card-selected > .card-text::after,
+.card-selected::after { 
+    border-color: #e62e7a;
+}
+
+.card-selected > .card-img div {
+    background-color: #e62e7a;
+}
+
+.card-selected:hover > .card-text::before,
+.card-selected:hover > .card-text::after,
+.card-selected:hover::after { 
+    border-color: #d91667;
+}
+
+.card-selected:hover > .card-img div {
+    background-color: #d91667;
+}
+
+@media (min-width: 625px) {
+    .card {
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+}
